@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"     
+    "http://struts.apache.org/dtds/struts-2.3.dtd"> 
+<struts>
+	<!-- 配置为开发模式 -->
+	<constant name="struts.devMode" value="true"></constant>
+	<!-- 配置action拓展名为.do -->
+	<constant name="struts.action.extension" value="do"></constant>
+	<!-- 主体该为simple -->
+	<constant name="struts.ui.theme" value="simple"></constant>
+	
+	<package name="default" namespace="/" extends="struts-default">
+		<interceptors>
+			<!-- 声明拦截器 -->
+			<interceptor name="CheckPrivilegeInterceptor" class="com.icynara.util.CheckPrivilegeInterceptor"></interceptor>
+			
+			<!--添加默认拦截器和自定义拦截器-->
+			<interceptor-stack name="myDefaultStack">
+				<interceptor-ref name="CheckPrivilegeInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 配置默认拦截器栈-->
+		<default-interceptor-ref name="myDefaultStack"></default-interceptor-ref>
+		
+		<!-- 配置全局result -->
+		<global-results>
+			<result name="loginUI">/WEB-INF/jsp/admin/login.jsp</result>
+		</global-results>
+		<!-- 处理user相关 -->
+		<action name="user_*" method="{1}" class="userAction">
+			<result name="login">/WEB-INF/jsp/admin/index.jsp</result>
+			<result name="loginUI">/WEB-INF/jsp/admin/login.jsp</result>
+			<result name="error">/WEB-INF/jsp/admin/login.jsp</result>
+			<result name="registUI">/WEB-INF/jsp/admin/regist.jsp</result>
+			<result name="message">/WEB-INF/jsp/admin/message.jsp</result>
+		</action>
+		<!-- 处理blog相关 -->
+		<action name="blog_*" method="{1}" class="blogAction">
+			<result name="list">/WEB-INF/jsp/blog/list.jsp</result>
+			<result name="addUI">/WEB-INF/jsp/blog/addUI.jsp</result>
+			<result name="updateUI">/WEB-INF/jsp/blog/updateUI.jsp</result>
+			<result name="view">/WEB-INF/jsp/blog/view.jsp</result>
+			<result name="message">/WEB-INF/jsp/admin/message.jsp</result>
+		</action>
+		<!-- 处理首页相关********** -->
+		<action name="client_*" method="{1}" class="clientAction">
+			<result name="toBlog">/blog.jsp</result>
+			<result name="view">/view.jsp</result>
+			<result name="message">/message.jsp</result>
+		</action>
+	</package>
+	
+	
+</struts>

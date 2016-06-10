@@ -1,0 +1,41 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
+<div class="sidebar-nav">
+        <form class="search form-inline">
+            <input type="text" placeholder="Search...">
+        </form>
+
+        <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>控制台</a>
+        <ul id="dashboard-menu" class="nav nav-list collapse in">
+            <li><s:a action="user_toIndex">主页</s:a></li>
+            <li><s:a action="blog_list">博客</s:a></li>
+            <li><a href="user.html">表单</a></li>
+            <li><a href="media.html">相册</a></li>
+            <li><a href="calendar.html">日历</a></li>
+        </ul>
+	<!-- 
+        <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>账号<span class="label label-info">+3</span></a>
+        <ul id="accounts-menu" class="nav nav-list collapse">
+            <li ><a href="sign-in.html">登录</a></li>
+            <li ><a href="sign-up.html">注册</a></li>
+            <li ><a href="reset-password.html">重置密码</a></li>
+        </ul>
+
+        <a href="#error-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-exclamation-sign"></i>错误页面<i class="icon-chevron-up"></i></a>
+        <ul id="error-menu" class="nav nav-list collapse">
+            <li ><a href="403.html">403错误页面</a></li>
+            <li ><a href="404.html">404错误页面</a></li>
+            <li ><a href="500.html">500错误页面</a></li>
+            <li ><a href="503.html">503错误页面</a></li>
+        </ul>
+
+        <a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>其他</a>
+        <ul id="legal-menu" class="nav nav-list collapse">
+            <li ><a href="privacy-policy.html">隐私声明</a></li>
+            <li ><a href="terms-and-conditions.html">协议</a></li>
+        </ul>
+
+        <a href="help.html" class="nav-header" ><i class="icon-question-sign"></i>帮助</a>
+        <a href="faq.html" class="nav-header" ><i class="icon-comment"></i>答疑</a>
+         -->
+    </div>

@@ -1,0 +1,22 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<footer>
+                        <hr>                      
+                        <p>&copy; 2012 <a href="http://www.icynara.com" target="_blank">iCynara</a></p>
+                    </footer>
+                    
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="${pageContext.request.contextPath}/admin/lib/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        $("[rel=tooltip]").tooltip();
+        $(function() {
+            $('.demo-cancel-click').click(function(){return false;});
+        });
+    </script>
+    
+  </body>
+</html>

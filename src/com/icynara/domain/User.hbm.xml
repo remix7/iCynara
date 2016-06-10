@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.icynara.domain">
+	<class name="User" table="ICYNARA_USER_C">
+		<id name="id" column="USER_ID" type="string" length="40">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="userName" column="USER_LOGIN_NAME" type="string" length="40"></property>
+		<property name="name" column="USER_NAME" type="string" length="40"></property>
+		<property name="email" column="USER_EMAIL" type="string" length="30"></property>
+		<property name="password" column="USER_PWD" type="string" length="30"></property>
+		<property name="createTime" column="USER_CREATE_TIME" type="timestamp"></property>
+		<property name="lastLoginTime" column="USER_LAST_LOGIN_TIME" type="timestamp"></property>
+		<property name="state" column="USER_STATE" type="string" length="1"></property>
+		<property name="note" column="USER_NOTE" type="string" length="50"></property>
+		<set name="blogs" inverse="true" cascade="all" lazy="false">
+			<key column="userId"></key>
+			<one-to-many class="Blog"/>
+		</set>
+	</class>
+</hibernate-mapping>
