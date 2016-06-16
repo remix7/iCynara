@@ -27,7 +27,8 @@ public class CheckPrivilegeInterceptor extends AbstractInterceptor {
 			if (url.startsWith("/user_login")
 					|| url.startsWith("/user_logOut")||url.startsWith("/user_registUI")
 					||url.startsWith("/user_regist")||url.startsWith("/user_mailCheck")
-					||url.startsWith("/client_toBlog")||url.startsWith("/client_viewBlog")) {
+					||url.startsWith("/client_toBlog")||url.startsWith("/client_viewBlog")
+					||url.startsWith("/user_findPassword")||url.startsWith("/user_findUserPass")) {
 				return invocation.invoke();
 			} else {
 				// b 如果用户访问的其他页面 则转到登录页面

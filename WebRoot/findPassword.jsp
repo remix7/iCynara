@@ -1,9 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>iCynara | 后台登录</title>
+		<title>iCynara | 完成注册</title>
 		<%@ include file="/WEB-INF/jsp/public/head.jspf"%>
 		<body >
 
@@ -17,36 +18,31 @@
 					</a>
 				</div>
 			</div>
-
+			
 			<div class="row-fluid">
 				<div class="dialog">
 					<div class="block">
 						<p class="block-heading">
-							登录
+							验证信息
 						</p>
 						<div class="block-body">
-							<s:form action="user_login" method="post" name="f1"  onsubmit = "return check();">
+							<form action="user_findPassword.do" method="post" name="f1"  onsubmit = "return check();">
 								<label>
-									用户名
+									邮箱
 								</label>
-								<input type="text" name="userName" class="span12">
-								<label>
-									密码
-								</label>
-								<input type="password" name="password" class="span12">
+								<input type="text" name="email" class="span12">
 								<label>
 									验证码
 								</label>
 								<input type="text" name="imageCode" class="span12" style="width: 200px"/>&nbsp;
 								<img width="103px" height="30px" src="http://localhost:8080/servlet/ImageChack"/><br/>
 								<input type='submit' class='btn btn-primary pull-right' 
-									value='登录'>
+									value='验证'>
 								<p>
-									<a href="${pageContext.request.contextPath}/findPassword.jsp">忘记密码?</a>&nbsp;&nbsp;&nbsp;
-									<a href="${pageContext.request.contextPath}/user_registUI.do">注册</a>
+									<a href="${pageContext.request.contextPath}/user_loginUI.do">登录</a>
 								</p>
 								<div class="clearfix"></div>
-							</s:form>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -54,14 +50,9 @@
 		</body>
 		<script type="text/javascript">
 			function check(){
-				if(f1.userName.value=="")  
+				if(f1.mailCode.value=="")  
                 {  
-					alert("请输入用户名!");
-                    return false;  
-                }  
-                else if(f1.password.value=="")  
-                {  
-                    alert("请输入密码!");  
+					alert("请输入返回码!");
                     return false;  
                 }else if(f1.imageCode.value==""){
                 	 alert("请输入验证码!");  

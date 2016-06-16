@@ -10,5 +10,10 @@ public interface UserService extends DaoSupport<User>{
 	User getByEmail(String email);
 	//根据用户的返回值来判断是否成功
 	User getByNote(String mailCode);
+	/**
+	 *  根据email查询用户
+	 * @param email
+	 * @return
+	 */
 
 }

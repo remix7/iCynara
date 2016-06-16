@@ -34,6 +34,7 @@
 			<result name="error">/WEB-INF/jsp/admin/login.jsp</result>
 			<result name="registUI">/WEB-INF/jsp/admin/regist.jsp</result>
 			<result name="message">/WEB-INF/jsp/admin/message.jsp</result>
+			<result name="findPassword">/WEB-INF/jsp/admin/findPassword.jsp</result>
 		</action>
 		<!-- 处理blog相关 -->
 		<action name="blog_*" method="{1}" class="blogAction">

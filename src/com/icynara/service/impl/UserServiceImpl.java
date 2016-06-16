@@ -35,4 +35,5 @@ public class UserServiceImpl extends DaoSupportImpl<User> implements UserService
 		.uniqueResult();
 	}
 
+
 }
